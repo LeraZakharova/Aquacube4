@@ -107,6 +107,45 @@
             </li>
           </ul>
         </div>
+        <div class="calc">
+          <form onchange="calc()" class="calc_form">
+            <div>
+              <p>Объем</p>
+              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="volume" value="" oninput="vol()">
+              <span>л</span>
+            </div>
+            <div>
+              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="length" value="" oninput="mult()"><span>см</span>
+              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="width" value="" oninput="mult()"><span>см</span>
+              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="height" value="" oninput="mult()"><span>см</span>
+            </div>
+            <div>
+              <p>Вид аквариума</p>
+              <p>
+                <input type="radio" name="type" id="sea" checked="checked" value="sea">Морской
+                <br>
+                <input type="radio" name="type" id="sweet" value="sweet">Пресноводный</p>
+            </div>
+            <div>
+              <p>
+                <input type="radio" name="sea" id="reef" checked="checked"><span id="first">С кораллами</span>
+                <br>
+                <input type="radio" name="sea" id="fish">
+                <Span id="second">Без кораллов</Span>
+              </p>
+            </div>
+            <div>
+              <p>Вид обслуживания</p>
+              <p>
+                <input type="radio" name="maintain" id="regular" checked="checked">Стандартное
+                <br>
+                <input type="radio" name="maintain" id="guarantee">С гарантией</p>
+            </div>
+            <div>
+              <p>Результат:<span id="result"></span></p>
+            </div>
+          </form>
+        </div>
       </section>
       <section class="products" id="products">
         <div class="products_div_order">

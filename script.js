@@ -102,3 +102,146 @@ function calculate() {
     document.getElementById('volume').innerHTML = volume;
     document.getElementById('price').innerHTML = price;
 }
+
+function vol() {
+  var height = document.getElementById("height").value;
+  var width = document.getElementById("width").value;
+  var length = document.getElementById("length").value;
+  if (height > 0 && width > 0 && length > 0) {
+    document.getElementById("height").value = "";
+    document.getElementById("width").value = "";
+    document.getElementById("length").value = "";
+  }
+}
+
+function mult() {
+  var multiply;
+  var height = document.getElementById("height").value;
+  var width = document.getElementById("width").value;
+  var length = document.getElementById("length").value;
+  if (height > 0 && width > 0 && length > 0) {
+    multiply = Math.round(height * width * length / 1000);
+    document.getElementById("volume").value = multiply;
+  }
+}
+
+function calc() {
+  var price;
+  var multiply;
+  var volume = document.getElementById("volume").value;
+  var height = document.getElementById("height").value;
+  var width = document.getElementById("width").value;
+  var length = document.getElementById("length").value;
+  var type = document.getElementById("sweet");
+  var reef = document.getElementById("reef");
+  var first = document.getElementById("first");
+  var second = document.getElementById("second");
+  var guarantee = document.getElementById("guarantee");
+  var result = document.getElementById("result");
+
+
+  if (type.checked) {
+    first.innerHTML = "Живые растения";
+    second.innerHTML = "Искуственные декорации";
+  } else {
+    first.innerHTML = "С кораллами";
+    second.innerHTML = "Без кораллов";
+  }
+
+  if (volume > 0 && volume <= 100) {
+    if (type.checked) {
+      if (reef.checked) {
+        if (guarantee.checked) {
+          price = 5000;
+        } else {
+          price = 3700;
+        }
+      } else {
+        if (guarantee.checked) {
+          price = 4500;
+        } else {
+          price = 3500;
+        }
+      }
+    } else {
+      if (reef.checked) {
+        if (guarantee.checked) {
+          price = 10000;
+        } else {
+          price = 6000;
+        }
+      } else {
+        if (guarantee.checked) {
+          price = 8000;
+        } else {
+          price = 4500;
+        }
+      }
+    }
+  } else if (volume > 0 && volume <= 500) {
+    if (type.checked) {
+      if (reef.checked) {
+        if (guarantee.checked) {
+          price = 6500;
+        } else {
+          price = 5500;
+        }
+      } else {
+        if (guarantee.checked) {
+          price = 6000;
+        } else {
+          price = 5000;
+        }
+      }
+    } else {
+      if (reef.checked) {
+        if (guarantee.checked) {
+          price = 20000;
+        } else {
+          price = 9000;
+        }
+      } else {
+        if (guarantee.checked) {
+          price = 12000;
+        } else {
+          price = 7000;
+        }
+      }
+    }
+  } else if (volume > 0 && volume <= 1000) {
+    if (type.checked) {
+      if (reef.checked) {
+        if (guarantee.checked) {
+          price = 8800;
+        } else {
+          price = 7000;
+        }
+      } else {
+        if (guarantee.checked) {
+          price = 7700;
+        } else {
+          price = 6000;
+        }
+      }
+    } else {
+      if (reef.checked) {
+        if (guarantee.checked) {
+          price = 30000;
+        } else {
+          price = 13000;
+        }
+      } else {
+        if (guarantee.checked) {
+          price = 19000;
+        } else {
+          price = 9000;
+        }
+      }
+    }
+  } else if (volume > 1000) {
+    price = " Вы указали объем больше 1000 литров. Свяжитесь с нами для индивидуального расчета стоимости.";
+  } else {
+    price = " Пожалуйста, укажите объем или измерения аквариума"
+  }
+  result.innerHTML = price;
+}
