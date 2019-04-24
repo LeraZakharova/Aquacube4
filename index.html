@@ -109,16 +109,29 @@
         </div>
         <div class="calc">
           <form onchange="calc()" class="calc_form">
-            <div>
-              <p>Объем</p>
-              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="volume" value="" oninput="vol()">
-              <span>л</span>
-            </div>
-            <div>
-              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="length" value="" oninput="mult()"><span>см</span>
-              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="width" value="" oninput="mult()"><span>см</span>
-              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="height" value="" oninput="mult()"><span>см</span>
-            </div>
+            <div class="calc_vol">
+	            <div class="calc_vol_div">
+	              <p class="calc_vol_div_p">Объем</p>
+	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="volume" value="" oninput="vol()" class="calc_input">
+	              <span>л</span>
+	            </div>
+	            <p class="calc_vol_or">или</p>
+	            <div class="calc_vol_div">
+	              <p class="calc_vol_div_p">Длина</p>
+	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="length" value="" oninput="mult()" class="calc_input">
+	              <span>см</span>
+	            </div>
+	            <div class="calc_vol_div">
+	              <p class="calc_vol_div_p">Ширина</p>
+	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="width" value="" oninput="mult()" class="calc_input">
+	              <span>см</span>
+	            </div>
+	            <div class="calc_vol_div">
+	              <p class="calc_vol_div_p">Высота</p>
+	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="height" value="" oninput="mult()" class="calc_input">
+	              <span>см</span>
+	            </div>
+	        </div>
             <div>
               <p>Вид аквариума</p>
               <p>

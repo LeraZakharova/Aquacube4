@@ -397,13 +397,55 @@
 }
 
 .calc_form{
-  width:700px;
+  width: max-content;
   display:flex;
   flex-direction:column;
   border:solid;
   border-color:#F65F3C;
-  border-width: 5px;
+  border-width: 7px;
   padding:20px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+}
+
+.calc_vol{
+	display: flex;
+    align-items: flex-end;
+}
+
+.calc_vol_div{
+	padding: 0 15;
+}
+
+.calc_vol_div_p{
+	margin-bottom: 5;
+}
+
+.calc_input{
+	width: 100px;
+    height: 40;
+}
+
+.calc_vol_or{
+	margin: 0 10 15 10;
+    font-size: 20;
+    font-variant: all-petite-caps;
+    font-weight: 400;
+}
+
+.calc_input:focus{
+	outline: 0;
+	outline-offset: 0;
+	border-width: 2px;
+	border-color: #F65F3C;
+}
+
+.calc_input::-webkit-input-placeholder {
+
+} 
+
+.calc_input::-moz-placeholder {
+
 }
 
 .types_water{
@@ -834,8 +876,6 @@ tr:hover {
 .check{
 	height: 20px;
 }
-
-.delivery{}
 
 .delivery_container{
 	padding-top: 50px;
