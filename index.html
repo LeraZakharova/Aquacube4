@@ -109,57 +109,70 @@
           </ul>
         </div>
         <div class="calc">
-          <label>Обслуживание</label><input type="checkbox" name="calc_type"><label>Изготовление</label>
-          <form onchange="calc()" class="calc_form">
-            <div class="calc_vol">
-	            <div class="calc_vol_div">
-	              <p class="calc_vol_div_p">Объем</p>
-	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="volume" value="" oninput="vol()" class="calc_input">
-	              <span>л</span>
-	            </div>
-	            <p class="calc_vol_or">или</p>
-	            <div class="calc_vol_div">
-	              <p class="calc_vol_div_p">Длина</p>
-	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="length" value="" oninput="mult()" class="calc_input">
-	              <span>см</span>
-	            </div>
-	            <div class="calc_vol_div">
-	              <p class="calc_vol_div_p">Ширина</p>
-	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="width" value="" oninput="mult()" class="calc_input">
-	              <span>см</span>
-	            </div>
-	            <div class="calc_vol_div">
-	              <p class="calc_vol_div_p">Высота</p>
-	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="height" value="" oninput="mult()" class="calc_input">
-	              <span>см</span>
-	            </div>
-	        </div>
-            <div>
-              <p>Вид аквариума</p>
-              <p>
-                <input type="radio" name="type" id="sea" checked="checked" value="sea">Морской
-                <br>
-                <input type="radio" name="type" id="sweet" value="sweet">Пресноводный</p>
+          <div class="calc_container">
+            <div class="switch_container">
+              <label for="switch" class="calc_switch">Изготовление</label>
+              <div class="switch">
+                <input checked type="checkbox" id="switch" class="switch-check">
+                <label for="switch" class="switch-label">
+                  Опция
+                  <span class="switch-slider switch-slider-on"></span>
+                  <span class="switch-slider switch-slider-off"></span>
+                </label>
+              </div>
+              <label for="switch" class="calc_switch">Обслуживание</label>
             </div>
-            <div>
-              <p>
-                <input type="radio" name="sea" id="reef" checked="checked"><span id="first">С кораллами</span>
-                <br>
-                <input type="radio" name="sea" id="fish">
-                <Span id="second">Без кораллов</Span>
-              </p>
-            </div>
-            <div>
-              <p>Вид обслуживания</p>
-              <p>
-                <input type="radio" name="maintain" id="regular" checked="checked">Стандартное
-                <br>
-                <input type="radio" name="maintain" id="guarantee">С гарантией</p>
-            </div>
-            <div>
-              <p>Результат:<span id="result"></span></p>
-            </div>
-          </form>
+            <form onchange="calc()" class="calc_form">  
+              <div class="calc_vol">
+  	            <div class="calc_vol_div">
+  	              <p class="calc_vol_div_p">Объем</p>
+  	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="volume" value="" oninput="vol()" class="calc_input">
+  	              <span>л</span>
+  	            </div>
+  	            <p class="calc_vol_or">или</p>
+  	            <div class="calc_vol_div">
+  	              <p class="calc_vol_div_p">Длина</p>
+  	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="length" value="" oninput="mult()" class="calc_input">
+  	              <span>см</span>
+  	            </div>
+  	            <div class="calc_vol_div">
+  	              <p class="calc_vol_div_p">Ширина</p>
+  	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="width" value="" oninput="mult()" class="calc_input">
+  	              <span>см</span>
+  	            </div>
+  	            <div class="calc_vol_div">
+  	              <p class="calc_vol_div_p">Высота</p>
+  	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="height" value="" oninput="mult()" class="calc_input">
+  	              <span>см</span>
+  	            </div>
+  	        </div>
+              <div>
+                <p>Вид аквариума</p>
+                <p>
+                  <input type="radio" name="type" id="sea" checked="checked" value="sea">Морской
+                  <br>
+                  <input type="radio" name="type" id="sweet" value="sweet">Пресноводный</p>
+              </div>
+              <div>
+                <p>
+                  <input type="radio" name="sea" id="reef" checked="checked"><span id="first">С кораллами</span>
+                  <br>
+                  <input type="radio" name="sea" id="fish">
+                  <Span id="second">Без кораллов</Span>
+                </p>
+              </div>
+              <div>
+                <p>Вид обслуживания</p>
+                <p>
+                  <input type="radio" name="maintain" id="regular" checked="checked">Стандартное
+                  <br>
+                  <input type="radio" name="maintain" id="guarantee">С гарантией</p>
+              </div>
+              <div>
+                <p>Результат:<span id="result"></span></p>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
       <section class="products" id="products">
