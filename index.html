@@ -63,6 +63,9 @@
               <a class="navigation_li_link" href="#maintenance" onClick="yaCounter51672554.reachGoal('maintain');">Обслуживание</a>
             </li>
             <li class="navigation_li">
+              <a class="navigation_li_link" href="#calculator" onClick="yaCounter51672554.reachGoal('maintain');">Рассчитать стоимость</a>
+            </li>
+            <li class="navigation_li">
               <a class="navigation_li_link" href="#delivery" onClick="yaCounter51672554.reachGoal('delivery');">Доставка и оплата</a>
             </li>
             <li class="navigation_li_last">
@@ -75,6 +78,7 @@
         <div class="header_name">
           <h1 class="title">Aquacube</h1>
           <h4 class="title_under">Изготовление&nbspи&nbspобслуживание<br>аквариумов&nbspв&nbspМоскве</h4>
+          <a href="#calculator" class="calc_button_link">Рассчитать стоимость онлайн</a>
         </div>
       </div>
     </header>
@@ -108,12 +112,12 @@
             </li>
           </ul>
         </div>
-        <div class="calc">
+        <div class="calc" id="calculator">
           <div class="calc_container">
             <div class="switch_container">
               <label for="switch" class="calc_switch">Изготовление</label>
               <div class="switch">
-                <input checked type="checkbox" id="switch" class="switch-check">
+                <input checked type="checkbox" id="switch" class="switch-check" onclick="calculator()">
                 <label for="switch" class="switch-label">
                   Опция
                   <span class="switch-slider switch-slider-on"></span>
@@ -122,7 +126,8 @@
               </div>
               <label for="switch" class="calc_switch">Обслуживание</label>
             </div>
-            <form onchange="calc()" class="calc_form">  
+            <form onchange="calc()" class="calc_form" id="calc_maintain">  
+              <p class="calc_intro"> Реальная стоимость обслуживания может отличаться от расчетной. <br> Стандартное число посещений в месяц: 4.</p>
               <div class="calc_vol">
   	            <div class="calc_vol_div">
   	              <p class="calc_vol_div_p">Объем</p>
@@ -183,31 +188,60 @@
                 </div>
               </div>
               <div class="calc_result">
-                <p class="calc_result_text">Результат: <span id="result"></span></p>
+                <p id="result_text" class="calc_result_text">Стоимость обслуживания в месяц:&nbsp<span id="result" class="calc_result_number"></span>&nbsp₽</p>
+                <p id="thousand" class="calc_result_text">Кажется, вы указали объем больше тысячи литров. Свяжитесь с нами, чтобы расчитать стоимость обслуживания индивидуально.</p>
+                <p id="param" class="calc_result_text">Пожалуйста, укажите объем аквариума</p>
               </div>
             </form>
-            <form onchange="aqua()" class="aqua_form">
-              <div>
-                <p>Объем</p>
-                <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_vol" value="" oninput="aqua_volume()">
-                <span>л</span>
+            <form onchange="aqua()" class="aqua_form" id="calc_aqua">
+              <div class="calc_vol">
+                <div class="calc_vol_div">
+                  <p class="calc_vol_div_p">Объем</p>
+                  <input class="calc_input" type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_vol" value="" oninput="aqua_volume()">
+                  <span>л</span>
+                </div>
+                <p class="calc_vol_or">или</p>
+                <div class="calc_vol_div">
+                  <p class="calc_vol_div_p">Длина</p>
+                  <input class="calc_input" type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_len" value="" oninput="aqua_mult()">
+                  <span>см</span>
+                </div>
+                <div class="calc_vol_div">
+                  <p class="calc_vol_div_p">Ширина</p>
+                  <input class="calc_input" type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_wid" value="" oninput="aqua_mult()">
+                  <span>см</span>
+                </div>
+                <div class="calc_vol_div">
+                  <p class="calc_vol_div_p">Высота</p>
+                  <input class="calc_input" type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_hei" value="" oninput="aqua_mult()">
+                  <span>см</span>
+                </div>
               </div>
-              <div>
-                <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_len" value="" oninput="aqua_mult()"><span>см</span>
-                <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_wid" value="" oninput="aqua_mult()"><span>см</span>
-                <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_hei" value="" oninput="aqua_mult()"><span>см</span>
+              <div class="calc_type">
+                <div class="calc_type_div">
+                  <p class="calc_head">Вид аквариума</p>
+                  <p class="calc_p">
+                    <input type="radio" name="type" id="aqua_sea" checked="checked" value="sea">
+                    <label for="aqua_sea">Морской</label>
+                  </p>
+                  <p class="calc_p">
+                    <input type="radio" name="type" id="aqua_sweet" value="sweet">
+                    <label for="aqua_sweet">Пресноводный</label>
+                  </p>
+                </div>
+                <div class="calc_type_div">
+                  <p class="calc_p">
+                    <input type="radio" name="sea" id="aqua_reef" checked="checked">
+                    <label for="aqua_reef" id="aqua_first">С кораллами</label>
+                  </p>
+                  <p class="calc_p">
+                    <input type="radio" name="sea" id="aqua_fish">
+                    <label for="aqua_fish" id="aqua_second">Без кораллов</label>
+                  </p>
+                </div>
               </div>
-              <div>
-                <p>Вид аквариума</p>
-                <p><input type="radio" name="type" id="aqua_sea" checked="checked" value="sea">Морской<br>
-                <input type="radio" name="type" id="aqua_sweet" value="sweet">Пресноводный</p>
-              </div>
-              <div>
-                <p><input type="radio" name="sea" id="aqua_reef" checked="checked"><span id="aqua_first">С кораллами</span><br>
-                <input type="radio" name="sea" id="aqua_fish"><Span id="aqua_second">Без кораллов</Span></p>
-              </div>
-              <div>
-                <p>Результат:<span id="aqua_result"></span></p>
+              <div class="calc_result">
+                <p class="calc_result_text" id="aqua_result_text">Приблизительная стоимость аквариума:&nbsp<span id="aqua_result"></span>&nbsp₽</p>
               </div>
             </form>
           </div>
