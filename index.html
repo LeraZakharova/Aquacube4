@@ -145,31 +145,69 @@
   	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="height" value="" oninput="mult()" class="calc_input">
   	              <span>см</span>
   	            </div>
-  	        </div>
+              </div>
+              <div class="calc_type">
+                <div class="calc_type_div">
+                  <p class="calc_head">Вид аквариума</p>
+                  <p class="calc_p">
+                    <input type="radio" name="type" id="sea" checked="checked" value="sea" class="input_radio">
+                    <label for="sea">Морской</label>
+                  </p>
+                  <p class="calc_p">
+                    <input type="radio" name="type" id="sweet" value="sweet" class="input_radio">
+                    <label for="sweet">Пресноводный</label>
+                  </p>
+                </div>
+                <div class="calc_type_div">
+                  <p class="calc_p">
+                    <input type="radio" name="sea" id="reef" checked="checked" class="input_radio">
+                    <label for="reef" id="first" >С кораллами</label>
+                  </p>
+                  <p class="calc_p">
+                    <input type="radio" name="sea" id="fish" class="input_radio">
+                    <label for="fish" id="second">Без кораллов</label>
+                  </p>
+                </div>
+              </div>
+              <div class="calc_type">
+                <div class="calc_type_div">
+                  <p class="calc_head">Вид обслуживания</p>
+                  <p class="calc_p">
+                    <input type="radio" name="maintain" id="regular" checked="checked" class="input_radio">
+                    <label for="regular">Стандартное</label>
+                  </p>
+                  <p class="calc_p">
+                    <input type="radio" name="maintain" id="guarantee" class="input_radio">
+                    <label for="guarantee">С гарантией</label>
+                  </p>
+                </div>
+              </div>
+              <div class="calc_result">
+                <p class="calc_result_text">Результат: <span id="result"></span></p>
+              </div>
+            </form>
+            <form onchange="aqua()" class="aqua_form">
+              <div>
+                <p>Объем</p>
+                <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_vol" value="" oninput="aqua_volume()">
+                <span>л</span>
+              </div>
+              <div>
+                <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_len" value="" oninput="aqua_mult()"><span>см</span>
+                <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_wid" value="" oninput="aqua_mult()"><span>см</span>
+                <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_hei" value="" oninput="aqua_mult()"><span>см</span>
+              </div>
               <div>
                 <p>Вид аквариума</p>
-                <p>
-                  <input type="radio" name="type" id="sea" checked="checked" value="sea">Морской
-                  <br>
-                  <input type="radio" name="type" id="sweet" value="sweet">Пресноводный</p>
+                <p><input type="radio" name="type" id="aqua_sea" checked="checked" value="sea">Морской<br>
+                <input type="radio" name="type" id="aqua_sweet" value="sweet">Пресноводный</p>
               </div>
               <div>
-                <p>
-                  <input type="radio" name="sea" id="reef" checked="checked"><span id="first">С кораллами</span>
-                  <br>
-                  <input type="radio" name="sea" id="fish">
-                  <Span id="second">Без кораллов</Span>
-                </p>
+                <p><input type="radio" name="sea" id="aqua_reef" checked="checked"><span id="aqua_first">С кораллами</span><br>
+                <input type="radio" name="sea" id="aqua_fish"><Span id="aqua_second">Без кораллов</Span></p>
               </div>
               <div>
-                <p>Вид обслуживания</p>
-                <p>
-                  <input type="radio" name="maintain" id="regular" checked="checked">Стандартное
-                  <br>
-                  <input type="radio" name="maintain" id="guarantee">С гарантией</p>
-              </div>
-              <div>
-                <p>Результат:<span id="result"></span></p>
+                <p>Результат:<span id="aqua_result"></span></p>
               </div>
             </form>
           </div>

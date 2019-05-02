@@ -245,3 +245,62 @@ function calc() {
   }
   result.innerHTML = price;
 }
+
+function aqua_volume(){
+  var height = document.getElementById("aqua_hei").value;
+  var width = document.getElementById("aqua_wid").value;
+  var length = document.getElementById("aqua_len").value;
+  if (height>0 && width>0 && length>0){
+    document.getElementById("aqua_hei").value = "";
+    document.getElementById("aqua_wid").value = "";
+    document.getElementById("aqua_len").value = "";
+  }
+}
+
+function aqua_mult(){
+  var multiply;
+  var height = document.getElementById("aqua_hei").value;
+  var width = document.getElementById("aqua_wid").value;
+  var length = document.getElementById("aqua_len").value;
+  if (height>0 && width>0 && length>0){
+    multiply=Math.round(height*width*length/1000);
+    document.getElementById("aqua_vol").value = multiply;
+  }
+}
+
+function aqua() {
+  var price;
+  var volume = document.getElementById("aqua_vol").value;
+  var height = document.getElementById("aqua_hei").value;
+  var width = document.getElementById("aqua_wid").value;
+  var length = document.getElementById("aqua_len").value;
+  var type = document.getElementById("aqua_sweet");
+  var reef = document.getElementById("aqua_reef");
+  var first = document.getElementById("aqua_first");
+  var second = document.getElementById("aqua_second");
+  var result = document.getElementById("aqua_result");
+  
+  
+  if (type.checked) {
+    first.innerHTML = "Живые растения";
+    second.innerHTML = "Искуственные декорации";
+} else { 
+    first.innerHTML = "С кораллами";
+    second.innerHTML = "Без кораллов";
+}
+
+if (type.checked){
+    if (reef.checked){
+      price=volume*600;
+    }else{
+      price=volume*550;
+    }
+  }else{
+    if (reef.checked){
+     price=volume*500;
+    }else{
+      price=volume*400;
+    }
+}
+  result.innerHTML = price;
+}

@@ -397,20 +397,29 @@
 }
 
 .calc_container{
-  border:solid;
-  border-color:#F65F3C;
-  border-width: 7px;
-  padding:20px;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 300;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border:solid;
+	border-color:#F65F3C;
+	border-width: 7px;
+	padding:20px;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 300;
 }
 
 .switch_container{
-
+	display: flex;
+	align-items: center;
+	padding: 10 0;
+	width: 100%;
+	justify-content: flex-end;
 }
 
 .calc_switch{
-  
+	padding: 0 10;
+	font-size: 30;
+	font-variant: all-petite-caps;
 }
 
 .switch {
@@ -494,15 +503,18 @@ top: 0;
 }
 
 .calc_form{
-  width: max-content;
+  width: 660px;
   display:flex;
   flex-direction:column;
+  align-items: center;
   
 }
 
 .calc_vol{
 	display: flex;
     align-items: flex-end;
+    width: 660px;
+    padding: 20 0 0 0;
 }
 
 .calc_vol_div{
@@ -511,11 +523,15 @@ top: 0;
 
 .calc_vol_div_p{
 	margin-bottom: 5;
+	font-size: 20px;
+	font-weight: 400;
 }
 
 .calc_input{
 	width: 100px;
     height: 40;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .calc_vol_or{
@@ -532,12 +548,39 @@ top: 0;
 	border-color: #F65F3C;
 }
 
-.calc_input::-webkit-input-placeholder {
+.calc_head{
+	font-size: 20px;
+	font-weight: 400;
+}
 
-} 
+.calc_type{
+	display: flex;
+	align-items: flex-end;
+	width: 660px;
+	padding: 20 0 0 0;
+}
 
-.calc_input::-moz-placeholder {
+.calc_type_div{
+	padding: 0 100 0 15;
+}
 
+.calc_p{
+	font-size: 18px;
+}
+
+.calc_result{
+	width: 100%;
+	display: flex;
+}
+
+.calc_result_text{
+	font-size: 30px;
+	font-weight: 400;
+	margin: 20 0 10 15;
+}
+
+.aqua_form{
+	display: none;
 }
 
 .types_water{
