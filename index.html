@@ -84,13 +84,23 @@
     </header>
     <main>
       <div class="promos_container">
-          <div class="promos">
-            <p class="promos_graf">Бесплатная доставка аквариума в пределах МКАД</p>
-            <p class="promos_graf">Бесплатная консультация специалиста-ихтиолога </p>
-            <p class="promos_graf">Бесплатный месяц обслуживания при подписании договора на год </p>
-            <p class="promos_graf">Дизайн-проект в подарок при заказе аквариума </p> 
-          </div>
+        <div class="promos">
+          <img src="./image/truck.svg" class="promos_img">
+          <p class="promos_graf">Бесплатная доставка аквариума в пределах МКАД</p>
         </div>
+        <div class="promos">
+          <img src="./image/consult.svg" class="promos_img">
+          <p class="promos_graf">Бесплатная консультация специалиста-ихтиолога </p>
+        </div>
+        <div class="promos">
+          <img src="./image/design.svg" class="promos_img">
+          <p class="promos_graf">Бесплатный месяц обслуживания при подписании договора на год </p>
+        </div>
+        <div class="promos">
+          <img src="./image/maintain.svg" class="promos_img">
+          <p class="promos_graf">Дизайн-проект в подарок при заказе аквариума </p> 
+        </div>
+      </div>
       <section class="types" id="about">
         <div class="types_places">
           <h3 class="h3">Создаем и обслуживаем аквариумы для...</h3>
@@ -131,7 +141,7 @@
               <div class="calc_vol">
   	            <div class="calc_vol_div">
   	              <p class="calc_vol_div_p">Объем</p>
-  	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="volume" value="" oninput="vol()" class="calc_input">
+  	              <input type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="volume" value="" oninput="vol(), calc()" class="calc_input">
   	              <span>л</span>
   	            </div>
   	            <p class="calc_vol_or">или</p>
@@ -197,7 +207,7 @@
               <div class="calc_vol">
                 <div class="calc_vol_div">
                   <p class="calc_vol_div_p">Объем</p>
-                  <input class="calc_input" type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_vol" value="" oninput="aqua_volume()">
+                  <input class="calc_input" type="text" inputmode="numeric" pattern="^[ 0-9]+$" id="aqua_vol" value="" oninput="aqua_volume(), aqua()" >
                   <span>л</span>
                 </div>
                 <p class="calc_vol_or">или</p>
