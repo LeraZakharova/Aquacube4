@@ -37,6 +37,15 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("#calc_link").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top-90}, 500);
+    });
+});
+
 $(document).scroll( function() {
 	if ( $(document).scrollTop() > 0 ) {
 		$('#toTop').fadeIn();
