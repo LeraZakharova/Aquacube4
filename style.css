@@ -180,9 +180,11 @@
 }
 
 .header_name{
-	position: relative;
-	top: 30px;
-	left: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100%;
+	padding-left: 50px;
 }
 
 .title{
@@ -207,7 +209,6 @@
 	color: white;
 	width: 370px;
 	height: 60px;
-	margin: 200 0 0 0;
 	font-family: 'Rubik', sans-serif;
   	font-weight: 300;
   	font-size: 22px;
@@ -224,9 +225,9 @@
 }
 
 .calc_button_link:hover{
-   width: 400px;
+   width: 380px;
    height: 70px;
-   margin: 195 0 0 -15;
+   margin: -5 -5 -5 -5;
    transition: all linear 0.2s;
 }
 
