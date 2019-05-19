@@ -38,6 +38,15 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    $("#contacts").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top-90}, 500);
+    });
+});
+
+$(document).ready(function(){
     $("#calc_link").on("click","a", function (event) {
         event.preventDefault();
         var id  = $(this).attr('href'),
@@ -280,7 +289,7 @@ function calc() {
   } else {
     param.style.display = "flex";
     thousand.style.display = "none";
-    ext.style.display = "none";
+    text.style.display = "none";
   }
   result.innerHTML = price;
 }

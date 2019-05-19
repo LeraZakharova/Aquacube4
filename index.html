@@ -54,28 +54,23 @@
         <nav id="navigation_bar">
           <ul class="navigation" onclick="closeMenu('menu')">
             <li class="navigation_li">
-              <a class="navigation_li_link" href="#about" onClick="yaCounter51672554.reachGoal('about'),triggerEvent:true;">О нас</a>
-            </li>
-            <li class="navigation_li">
-              <a class="navigation_li_link" href="#products" onClick="yaCounter51672554.reachGoal('zakaz');">Аквариум на заказ</a>
+              <a class="navigation_li_link" href="#products" onClick="yaCounter51672554.reachGoal('zakaz');">Аквариум <br>на заказ</a>
             </li>
             <li class="navigation_li">
               <a class="navigation_li_link" href="#maintenance" onClick="yaCounter51672554.reachGoal('maintain');">Обслуживание</a>
             </li>
             <li class="navigation_li">
-              <a class="navigation_li_link" href="#calculator" onClick="yaCounter51672554.reachGoal('maintain');">Рассчитать стоимость</a>
-            </li>
-            <li class="navigation_li">
-              <a class="navigation_li_link" href="#delivery" onClick="yaCounter51672554.reachGoal('delivery');">Доставка и оплата</a>
+              <a class="navigation_li_link" href="#calculator" onClick="yaCounter51672554.reachGoal('maintain');">Онлайн калькулятор</a>
             </li>
             <li class="navigation_li_last">
-              <a class="navigation_li_link" href="#apply" onClick="yaCounter51672554.reachGoal('contacts');">Контакты</a>
+              <a class="navigation_li_link" href="#delivery" onClick="yaCounter51672554.reachGoal('delivery');">Доставка <br>и оплата</a>
             </li>
           </ul>
         </nav>
-        <div class="nav_contacts">
+        <div class="nav_contacts" id="contacts">
           <p class="nav_contacts_p">+7-995-905-99-62</p>
           <p class="nav_contacts_p">с 10:00 до 22:00</p>
+          <a class="nav_contacts_p" href="#apply">Связяться с нами</a>
         </div>
       </div>
       <div class="main_image">
@@ -84,8 +79,8 @@
             <h1 class="title">Aquacube</h1>
             <h4 class="title_under">Изготовление&nbspи&nbspобслуживание<br>аквариумов&nbspв&nbspМоскве</h4>
           </div>
-          <div>
-            <a href="#calculator" class="calc_button_link" id="calc_link">Рассчитать стоимость онлайн</a>
+          <div iid="calc_link">
+            <a href="#calculator" class="calc_button_link">Рассчитать стоимость</a>
           </div>
         </div>
       </div>
@@ -396,14 +391,16 @@
         </div>
       </section>
       <section class="section_contacts" id="apply">
-        <h3 class="h3">Закажите изготовление, обслуживание аквариума или задайте вопрос</h3>
+        <h3 class="h3">Контакты</h3>
         <div class="contacts">  
           <div class="contacts_list">
             <ul class="contacts_list_ul">
+              <li>
+                <a href="https://wa.me/79168524321" target="_blank" onClick="yaCounter51672554.reachGoal('whatsapp1');"><img src="./image/whatsapp.svg" class="contact_image"></a>
+                <a href="tg://resolve?domain=<AquaCube>" target="_blank" onClick="yaCounter51672554.reachGoal('telegram1');"><img src="./image/telegram.svg" class="contact_image"></a>
+              </li>
               <li>E-mail: <a href="mailto:info@aquaqube.pro" class="contacts_link" target="_blank" onClick="yaCounter51672554.reachGoal('mailto');">info@aquaqube.pro</a></li>
               <li>Телефон: <a href="tel: +79959059962" class="contacts_link" target="_blank" onClick="yaCounter51672554.reachGoal('call');">+7-995-905-99-62</a></li>
-              <li><a href="https://wa.me/79168524321" class="contacts_link" target="_blank" onClick="yaCounter51672554.reachGoal('whatsapp2');">WhatsApp</a></li>
-              <li><a href="tg://resolve?domain=<AquaCube>" class="contacts_link" target="_blank" onClick="yaCounter51672554.reachGoal('telegram2');">Telegram</a></li>
             </ul>
           </div>            
           <div class="contacts_form">
@@ -416,7 +413,7 @@
               <p class="form_placeholder">Номер телефона</p>
               <textarea class="form_text" name="Description" cols="100" rows="3" ></textarea>
               <p class="form_placeholder">Описание заказа</p>
-              <input class="form_button" type="submit" value="отправить">
+              <input class="form_button" type="submit" value="Отправить">
             </form>
           </div>
         </div>  
