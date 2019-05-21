@@ -50,6 +50,8 @@
 .navigation_li:hover{
 	background-color: rgba(255,255,255,0.3);
 	transition: all linear 0.2s;
+	outline: aliceblue solid 5px;
+	outline-offset: -5px;
 }
 
 .navigation_li_last{
@@ -71,6 +73,8 @@
 .navigation_li_last:hover{
 	background-color: rgba(255,255,255,0.3);
 	transition: all linear 0.2s;
+	outline: aliceblue solid 5px;
+	outline-offset: -5px;
 }
 
 .navigation_li_link{
@@ -187,9 +191,10 @@
 	width: 100%;
 	padding-top: 110px;
 	display: block;
-	height: 500px;
+	height: calc(100% - 110px);
+	min-height: 400px;
 	overflow: hidden;
-	background-image: url(./image/Sea.jpg);
+	background-image: url(./image/Aqua.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-y: center;
@@ -200,7 +205,8 @@
 		content: '';
 		background-color: rgba(0,0,0,0.4);
 		width: 100%;
-		height: 500px;
+		height: calc(100% - 110px);
+		min-height: 400px;
 		display: block;
 		position: absolute;
 		
@@ -218,7 +224,7 @@
 
 .title{
 	font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-variant: all-petite-caps;
     color: #FFFFFF;
     font-size: 100px;
@@ -840,27 +846,18 @@ top: 0;
 	width: 100%;
 	padding-top: 5%;
 	margin-bottom: 100px;
-    height: -webkit-max-content;
-    height: -moz-max-content;
     height: max-content;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-wrap: wrap-reverse;
-	    flex-wrap: wrap-reverse;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	flex-wrap: wrap-reverse;
+	justify-content: center;
+	align-items: flex-start;
 	background-color: #F4F4F4; 
 }
 
 .products_div_image{
 	background-image: url(./image/Maintain.jpeg);
 	width: 100%;
-	height: 400px;
+	height: 500px;
 	background-size: cover;
 	background-position: center;
 	display: flex;
@@ -871,7 +868,7 @@ top: 0;
 
 .products_div_image::before{
 	content: "";
-	height: 400px;
+	height: 500px;
 	width: 100%;
 	background-color: rgba(0,0,0,0.5);
 	position: absolute;
@@ -913,6 +910,7 @@ top: 0;
 
 .products_div_text_key{
 	width: 50%;
+	height: 100%;
 	min-width: 270px;
 	padding-left: 2%;
     padding-right: 2%;
@@ -1698,6 +1696,10 @@ tr:hover {
 		text-align: center;
 	}
 
+	.navigation_li::after{
+		display: none;
+	}
+
 	.navigation_li_last{
 		width: 100%;
 		height: 20px;
@@ -1886,10 +1888,6 @@ tr:hover {
 }
 
 @media all and (max-height: 600px){
-	.main_image{
-		height: 400px;
-	}
-
 	.title{
 		font-size: 50px;
 	}
