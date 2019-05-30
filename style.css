@@ -274,10 +274,8 @@
 
 .promos_container{
 	width: 100%;
-	display: none;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	position: relative;
+	height: 100%;
+	position: absolute;
 }
 
 .promos_img{
@@ -1098,7 +1096,7 @@ tr:hover {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	padding: 80 20 40 20;
+	padding: 90 30 50 30;
 	overflow: hidden;
 }
 
