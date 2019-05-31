@@ -191,7 +191,9 @@
 .main_image{
 	width: 100%;
 	padding-top: 110px;
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 	height: calc(100% - 110px);
 	min-height: 400px;
 	overflow: hidden;
@@ -218,8 +220,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
 	position: relative;
+	margin: 2% 0 0 0 ;
 }
 
 .title{
@@ -274,8 +276,10 @@
 
 .promos_container{
 	width: 100%;
-	height: 100%;
-	position: absolute;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
 }
 
 .promos_img{
@@ -284,25 +288,40 @@
 }
 
 .promos_graf{
+  	width:95%;
+  	color: white;
   	font-family: 'Rubik', sans-serif;
   	font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     display: block;
-    width: 90%;
     text-align: center;
-    margin: 0;
+}
+
+.container {
+    width: 14%;
+    margin: 0 20;
+}
+
+.container_wrapper {
+    border-radius:50%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
 }
 
 .promos{
-	width: 20%;
-	min-width: 180px;
-	height: 150px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #F4F4F4;
-	margin-top: -30px;
-	margin-bottom: 50px;
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display:flex;
+    align-items:center;
 }
 
 .types{ 
@@ -1559,7 +1578,7 @@ tr:hover {
 
 @media all and (max-width: 1100px){
 	.promos_graf{
-		font-size: 18px;
+		font-size: 14px;
 	}
 
 	.chart{
@@ -1649,21 +1668,6 @@ tr:hover {
 		height: 70px;
 		transition: all linear 0.2s;
 }
-
-	.promos_container{
-		margin-top: 0;
-		margin-bottom: 10
-	}
-
-	.header_name{
-	    width: 100%;
-		margin: 0;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		position: relative;
-	}
 
 	.types_places_list_text{
 		font-size: 16px;
@@ -1760,9 +1764,6 @@ tr:hover {
 
 	.main_image{
 		padding: 0;
-	    display: flex;
-    	justify-content: space-between;
-      	align-items: flex-end;
 	}
 
 	.menu{
