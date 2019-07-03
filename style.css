@@ -2,7 +2,7 @@
 	width: 100%;
 	height: 110px;
 	background-color: black;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
@@ -190,38 +190,45 @@
 
 .main_image{
 	width: 100%;
-	padding-top: 110px;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	height: calc(100% - 110px);
-	min-height: 400px;
-	overflow: hidden;
-	background-image: url(./image/Aqua.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position-y: center;
-	background-position-x: center;
-}
-
-.main_image::before{
-		content: '';
-		background-color: rgba(0,0,0,0.4);
-		width: 100%;
-		height: calc(100% - 110px);
-		min-height: 400px;
-		display: block;
-		position: absolute;
-		
-	}
-
-.header_name{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	height: calc(100% - 70px);
+	min-height: 400px;
+	margin-top: 70px;
+	overflow: hidden;
+	background-image: url(./image/Aqua.jpg);
+	background-size: cover;
+}
+
+.main_image::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 70px);
+	background-color: rgba(0,0,0,0.5);
+}
+
+.header_container{
+	width: 100%;
 	position: relative;
-	margin: 2% 0 0 0 ;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header_buttons{
+	display: flex;
+}
+
+.header_name{
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin: 0 0 3% 0 ;
 }
 
 .title{
@@ -274,32 +281,9 @@
 	color: white;
 }
 
-.promos_container{
+.promos{
 	width: 100%;
-    position: absolute;
-    bottom: 5%;
-    display: flex;
-    justify-content: center;
-}
-
-.promos_img{
-	width: 30px;
-	padding: 5 10 0 0;
-}
-
-.promos_graf{
-  	width:95%;
-  	color: white;
-  	font-family: 'Rubik', sans-serif;
-  	font-weight: 300;
-    font-size: 16px;
-    display: block;
-    text-align: center;
-}
-
-.container {
-    width: 14%;
-    margin: 0 20;
+    position: relative;
 }
 
 .container_wrapper {
@@ -308,20 +292,6 @@
     position: relative;
     width: 100%;
     padding-bottom: 100%;
-}
-
-.promos{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display:flex;
-    align-items:center;
 }
 
 .types{ 
@@ -339,16 +309,9 @@
 }
 
 .types_places{
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	-ms-flex-pack: distribute;
-	    justify-content: space-around;
-	min-height: 500px;
+	flex-direction: column;
+	align-items: center;
 	width: 100%;
 	margin-top: 50px;
 }
@@ -1430,7 +1393,7 @@ tr:hover {
 	position: fixed;
 	align-items: center;
 	justify-content: center;
-	top: 125px;
+	top: 85px;
 	right: 25px;
 	width: max-content;
 	max-width: 100%;
@@ -1452,14 +1415,13 @@ tr:hover {
 }
 
 .return_call_form{
-	margin: 0;
+	margin: 0 0 0 10;
 	display: none;
     align-items: center;
 }
 
 .return_call_icon{
 	height: 25px;
-	margin: 10px;
 }
 
 .return_call_submit{
@@ -1582,7 +1544,6 @@ tr:hover {
 	}
 
 	.chart{
-		height: max-content;
 		padding: 30 0;
 		flex-direction: column;
 	}
