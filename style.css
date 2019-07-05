@@ -9,6 +9,10 @@
 	z-index: 1;
 }
 
+.button_link{
+	text-decoration: none;
+}
+
 .navigation{
 	margin: 0;
 	padding: 0;
